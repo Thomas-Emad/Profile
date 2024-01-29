@@ -1,26 +1,50 @@
 <?php
 // All Projects
+
+function getSortKey($folder)
+{
+	$filePath = $folder . '/project.txt';
+	try {
+		$dateString = preg_split('/\r\n|\r|\n/', file_get_contents($filePath))[4];
+		$dateTime = DateTime::createFromFormat('Y/m/d', $dateString);
+		if ($dateTime != false) {
+			return $dateTime->getTimestamp();
+		} else {
+			return PHP_INT_MAX;
+		}
+	} catch (Exception $e) {
+		return PHP_INT_MAX;
+	}
+}
+
+function sortFoldersByData($folderPath)
+{
+	$folders = array_filter(glob($folderPath . '/*'), 'is_dir');
+	usort($folders, fn ($a, $b) => getSortKey($b) - getSortKey($a));
+	return $folders;
+}
+
+$folderPath = 'projects/';
+$sortedFolders = sortFoldersByData($folderPath);
+
 $projects = [];
-$files = glob('projects/*/project.txt');
-usort($files, function ($a, $b) {
-	return filemtime($a) - filemtime($b);
-});
-foreach ($files as $file) {
-	$projects[] = preg_split('/\r\n|\r|\n/', file_get_contents($file));
+foreach ($sortedFolders as $file) {
+	$projects[] = preg_split('/\r\n|\r|\n/', file_get_contents($file  . "/project.txt"));
 }
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="shortcut icon" href="image/icons/icon.png" type="image/x-icon">
-	<meta name="description"
-		content="Welcome to my profile, my name is Thomas Emad. I'm a Backend Developer PHP, And I Love programming and Technology">
+	<meta name="description" content="Welcome to my profile, my name is Thomas Emad. I'm a Backend Developer PHP, And I Love programming and Technology">
 	<title>Thomas Emad || Profile</title>
 </head>
+
 <body>
 	<!-- Start Code Header -->
 	<header>
@@ -118,7 +142,7 @@ foreach ($files as $file) {
 					<img src="image/icons/mysql.png"><span>MySQL</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/iconLaravel.png"><span>Laravel</span>
+					<img src="image/icons/laravel.png"><span>Laravel</span>
 				</div>
 				<div class="box">
 					<img src="image/icons/objects.png"><span>OOP</span>
@@ -177,12 +201,9 @@ foreach ($files as $file) {
 			<div class="content">
 				<p>You can contact me through:</p>
 				<div class="icons">
-					<a href="https://www.facebook.com/profile.php?id=100090428432562" target="_blank"><img
-							src="image/icons/facebook.png" alt="icon facebook"></a>
-					<a href="https://www.linkedin.com/in/thomas-emad/" target="_blank"><img
-							src="image/icons/linkedin.png" alt="icon linkedin"></a>
-					<a href="https://github.com/thomas-Emad" target="_blank"><img src="image/icons/github.png"
-							alt="icon github"></a>
+					<a href="https://www.facebook.com/profile.php?id=100090428432562" target="_blank"><img src="image/icons/facebook.png" alt="icon facebook"></a>
+					<a href="https://www.linkedin.com/in/thomas-emad/" target="_blank"><img src="image/icons/linkedin.png" alt="icon linkedin"></a>
+					<a href="https://github.com/thomas-Emad" target="_blank"><img src="image/icons/github.png" alt="icon github"></a>
 					<a href="mailto:thomas.emad.shawky.com"><img src="image/icons/mail.png" alt="icon mail"></a>
 				</div>
 			</div>
@@ -191,4 +212,5 @@ foreach ($files as $file) {
 	<script src="js/main.js"></script>
 
 </body>
+
 </html>
