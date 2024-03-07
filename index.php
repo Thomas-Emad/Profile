@@ -38,14 +38,28 @@ foreach ($sortedFolders as $file) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/all.min.css">
 	<link rel="shortcut icon" href="image/icons/icon.png" type="image/x-icon">
 	<meta name="description" content="Welcome to my profile, my name is Thomas Emad. I'm a Backend Developer PHP, And I Love programming and Technology">
 	<title>Thomas Emad || Profile</title>
+	<script>
+		window.addEventListener("load", function() {
+			document.getElementsByClassName("loader")[0].style.display = "none";
+		})
+	</script>
 </head>
 
 <body>
+	<div class="loader">
+		<svg width="200" height="100" viewBox="0 0 350 200">
+			<path class="lt" d="M 100 50 L 50 100 L 100 150"></path>
+			<path class="slash" d="M 150 175 L 200 25"></path>
+			<path class="gt" d="M 250 50 L 300 100 L 250 150"></path>
+		</svg>
+	</div>
 	<!-- Start Code Header -->
 	<header>
 		<div class="container">
@@ -56,7 +70,7 @@ foreach ($sortedFolders as $file) {
 					<li><a href="https://github.com/thomas-Emad" target="_blank">GitHub</a></li>
 					<li><a href="https://www.linkedin.com/in/thomas-emad/" class="btn" target="_blank">Contact</a></li>
 				</ul>
-				<a class="icon_list"><i class="fa-solid fa-bars "></i></a>
+				<a class="icon_list"><img src="image/icon-menu.png" alt="icon-menu"></a>
 			</nav>
 		</div>
 	</header>
@@ -67,7 +81,7 @@ foreach ($sortedFolders as $file) {
 				</h2>
 				<h3>Hi, I'm Thomas, a backend developer, and this is my favorite hobby</h3>
 			</div>
-			<img src="image/first.png">
+			<img src="image/first.png" alt="leading img">
 		</div>
 	</section>
 	<section class="services">
@@ -78,42 +92,42 @@ foreach ($sortedFolders as $file) {
 			</div>
 			<div class="parent">
 				<div class="box">
-					<img src="image/fastTime.jpg">
+					<img src="image/fastTime.jpg" alt="Fast Site" loading='lazy'>
 					<div class="text">
 						<b>Fast Site</b>
 						<p>The most important thing is to perform well</p>
 					</div>
 				</div>
 				<div class="box">
-					<img src="image/verification.jpg">
+					<img src="image/verification.jpg" alt="Verification" loading='lazy'>
 					<div class="text">
 						<b>Verification</b>
 						<p>You have to secure the site because you don't know what the customer is doing</p>
 					</div>
 				</div>
 				<div class="box">
-					<img src="image/code.jpg">
+					<img src="image/code.jpg" alt="Clean coding" loading='lazy'>
 					<div class="text">
 						<b>Clean coding</b>
 						<p>Simple and understandable code for everyone</p>
 					</div>
 				</div>
 				<div class="box">
-					<img src="image/time.jpg">
+					<img src="image/time.jpg" alt="on The time" loading='lazy'>
 					<div class="text">
 						<b>on The time</b>
 						<p>Delivery ahead of schedule too!!</p>
 					</div>
 				</div>
 				<div class="box">
-					<img src="image/message.jpg">
+					<img src="image/message.jpg" alt="Anytime we are here" loading='lazy'>
 					<div class="text">
 						<b>Anytime we are here</b>
 						<p>Send to us and soon you will know the answer</p>
 					</div>
 				</div>
 				<div class="box">
-					<img src="image/iconLaravel.png">
+					<img src="image/iconLaravel.png" alt="Latest technology" loading='lazy'>
 					<div class="text">
 						<b>Latest technology</b>
 						<p>What distinguishes this framework is that it is simple and strong in security</p>
@@ -130,31 +144,37 @@ foreach ($sortedFolders as $file) {
 			</div>
 			<div class="parent">
 				<div class="box">
-					<img src="image/icons/html.png"><span>HTML</span>
+					<img src="image/icons/html.png" alt="icon html"><span>HTML</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/css.png"><span>CSS</span>
+					<img src="image/icons/css.png" alt="icon css"><span>CSS</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/php.png"><span>PHP</span>
+					<img src="image/icons/bootstrap.png" alt="icon bootstrap"><span>Bootstrap</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/mysql.png"><span>MySQL</span>
+					<img src="image/icons/js.png" alt="icon js"><span>JS</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/laravel.png"><span>Laravel</span>
+					<img src="image/icons/php.png" alt="icon php"><span>PHP</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/objects.png"><span>OOP</span>
+					<img src="image/icons/mysql.png" alt="icon mysql"><span>MySQL</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/git.png"><span>Git</span>
+					<img src="image/icons/laravel.png" alt="icon laravel"><span>Laravel</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/github.png"><span>GitHub</span>
+					<img src="image/icons/objects.png" alt="icon objects"><span>OOP</span>
 				</div>
 				<div class="box">
-					<img src="image/icons/illustrator.png"><span>Illustrator</span>
+					<img src="image/icons/git.png" alt="icon git"><span>Git</span>
+				</div>
+				<div class="box">
+					<img src="image/icons/github.png" alt="icon github"><span>GitHub</span>
+				</div>
+				<div class="box">
+					<img src="image/icons/illustrator.png" alt="icon illustrator"><span>Illustrator</span>
 				</div>
 			</div>
 		</div>
@@ -175,7 +195,7 @@ foreach ($sortedFolders as $file) {
 							<div class='content'>
 								<div class='icons'>";
 					foreach ($icons as $len) {
-						echo "<img src='image/icons/$len.png'>";
+						echo "<img src='image/icons/$len.png' loading='lazy'>";
 					}
 					echo "	</div>
 								<div class='title'>
@@ -187,6 +207,11 @@ foreach ($sortedFolders as $file) {
 				}
 				?>
 			</div>
+			<?php
+			if (sizeof($projects) <= 0) {
+				echo "<div class='noProject'>Sorry, No Porject Found</div>";
+			}
+			?>
 			<div class="showMore">More..</div>
 		</div>
 	</section>
@@ -201,14 +226,13 @@ foreach ($sortedFolders as $file) {
 			<div class="content">
 				<p>You can contact me through:</p>
 				<div class="icons">
-					<a href="https://www.facebook.com/profile.php?id=100090428432562" target="_blank"><img src="image/icons/facebook.png" alt="icon facebook"></a>
-					<a href="https://www.linkedin.com/in/thomas-emad/" target="_blank"><img src="image/icons/linkedin.png" alt="icon linkedin"></a>
-					<a href="https://github.com/thomas-Emad" target="_blank"><img src="image/icons/github.png" alt="icon github"></a>
-					<a href="mailto:thomas.emad.shawky.com"><img src="image/icons/mail.png" alt="icon mail"></a>
+					<a href="https://www.facebook.com/profile.php?id=100090428432562" target="_blank"><img src="image/icons/facebook.png" alt="icon facebook" loading='lazy'></a>
+					<a href="https://www.linkedin.com/in/thomas-emad/" target="_blank"><img src="image/icons/linkedin.png" alt="icon linkedin" loading='lazy'></a>
+					<a href="https://github.com/thomas-Emad" target="_blank"><img src="image/icons/github.png" alt="icon github" loading='lazy'></a>
+					<a href="mailto:thomas.emad.shawky.com"><img src="image/icons/mail.png" alt="icon mail" loading='lazy'></a>
 				</div>
 			</div>
 	</footer>
-	<script src="js/all.min.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
