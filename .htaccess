@@ -1,9 +1,0 @@
-# Enable mod_rewrite
-RewriteEngine On
-
-# Redirect all requests to HTTPS
-#RewriteCond %{HTTPS} off
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Custom 404 error page (replace "error.php" with your actual 404 page)
-#ErrorDocument 404 /404.html
